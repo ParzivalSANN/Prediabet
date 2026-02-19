@@ -6,7 +6,7 @@ import { Colors } from '../constants/Colors';
 import { ArrowLeft, Search, Bolt, Heart } from 'lucide-react-native';
 import { FOOD_DATA, FoodItem } from '../data/foodData';
 
-const CATEGORIES = ['All Foods', 'Vegetables', 'Fruits', 'Grains', 'Proteins', 'Dairy', 'Fats'];
+const CATEGORIES = ['Tümü', 'Sebzeler', 'Meyveler', 'Tahıllar', 'Proteinler', 'Süt Ürünleri', 'Yağlar'];
 
 export const FoodGuideScreen = ({ navigation }: any) => {
     const [searchText, setSearchText] = useState('');
