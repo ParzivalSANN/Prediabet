@@ -67,11 +67,6 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
                     strokeLinecap="round"
                     rotation="-90"
                     origin={`${size / 2}, ${size / 2}`}
-                    // Shadow properties for "glow"
-                    shadowColor={Colors.primary}
-                    shadowOffset={{ width: 0, height: 0 }}
-                    shadowOpacity={0.6}
-                    shadowRadius={15}
                 />
             </Svg>
         </View>

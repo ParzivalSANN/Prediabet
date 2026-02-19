@@ -97,6 +97,14 @@ Projeyi yerel ortamınızda çalıştırmak için:
 
 *(Not: Ekran görüntüleri temsilidir, uygulamayı çalıştırarak canlı deneyimleyebilirsiniz.)*
 
+## 🎥 Uygulama Tanıtım Videosu
+
+Uygulamanın kullanımını ve özelliklerini canlı görmek için aşağıdaki videoyu izleyebilirsiniz:
+
+[![PrediaBet Uygulama Tanıtımı](https://img.youtube.com/vi/ShMWCzuhFj8/hqdefault.jpg)](https://youtube.com/shorts/ShMWCzuhFj8)
+
+> **[Tanıtım Videosunu İzlemek İçin Tıklayın](https://youtube.com/shorts/ShMWCzuhFj8)**
+
 ---
 
 **Geliştirici**: [ParzivalSANN](https://github.com/ParzivalSANN)
