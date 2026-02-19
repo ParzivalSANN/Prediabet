@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'rea
 import { ScreenBackground } from '../components/ScreenBackground';
 import { GlassCard } from '../components/GlassCard';
 import { Colors } from '../constants/Colors';
-import { Settings, TrendingUp, TrendingDown, Activity, FileText, ChevronRight, LogOut } from 'lucide-react-native';
+import { Settings, TrendingUp, TrendingDown, Activity, FileText, ChevronRight, LogOut, Footprints, Scale } from 'lucide-react-native';
 
 export const ProfileScreen = ({ navigation }: any) => {
     return (
@@ -48,6 +48,12 @@ export const ProfileScreen = ({ navigation }: any) => {
                     <Text style={styles.updateText}>2dk önce güncellendi</Text>
                 </View>
 
+                {/* Health Snapshot */}
+                <View style={styles.sectionHeader}>
+                    <Text style={styles.sectionTitle}>Sağlık Özeti</Text>
+                    <Text style={styles.updateText}>2dk önce güncellendi</Text>
+                </View>
+
                 <View style={styles.grid}>
                     <GlassCard style={styles.statCard}>
                         <View style={styles.statHeader}>
@@ -61,10 +67,10 @@ export const ProfileScreen = ({ navigation }: any) => {
                         <Text style={styles.statValue}>105 <Text style={styles.unit}>mg/dL</Text></Text>
                     </GlassCard>
 
-                    <TouchableOpacity style={styles.statCard} onPress={() => navigation.navigate('BMICalculator')}>
-                        <GlassCard style={{ height: '100%', padding: 16 }}>
+                    <TouchableOpacity style={styles.statCardBtn} onPress={() => navigation.navigate('BMICalculator')}>
+                        <GlassCard style={styles.statCardInner}>
                             <View style={styles.statHeader}>
-                                <Activity color={Colors.primary} size={20} />
+                                <Scale color={Colors.primary} size={20} />
                                 <View style={styles.trendBadg}>
                                     <TrendingDown color={Colors.accent.green} size={12} />
                                     <Text style={styles.badgTextGreen}>0.4%</Text>
@@ -75,10 +81,10 @@ export const ProfileScreen = ({ navigation }: any) => {
                         </GlassCard>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.statCard} onPress={() => navigation.navigate('Tracking')}>
-                        <GlassCard style={{ height: '100%', padding: 16 }}>
+                    <TouchableOpacity style={styles.statCardBtn} onPress={() => navigation.navigate('Tracking')}>
+                        <GlassCard style={styles.statCardInner}>
                             <View style={styles.statHeader}>
-                                <Activity color={Colors.accent.green} size={20} />
+                                <Footprints color={Colors.accent.green} size={20} />
                                 <View style={styles.trendBadg}>
                                     <TrendingUp color={Colors.accent.green} size={12} />
                                     <Text style={styles.badgTextGreen}>15%</Text>
@@ -99,21 +105,47 @@ export const ProfileScreen = ({ navigation }: any) => {
                     </GlassCard>
                 </View>
 
-                {/* Menu List */}
-                <Text style={[styles.sectionTitle, { marginTop: 24, marginBottom: 12 }]}>Tıbbi Kayıtlar</Text>
+                {/* Medical Records / Menu List */}
+                <Text style={[styles.sectionTitle, { marginTop: 24, marginBottom: 16 }]}>Tıbbi Kayıtlar</Text>
 
                 <View style={styles.menuList}>
-                    <TouchableOpacity onPress={() => navigation.navigate('AddFood')}>
-                        <MenuItem icon={<TrendingUp color={Colors.primary} size={20} />} title="Besin Günlüğü Ekle" subtitle="Günlük öğünleri kaydet" color={Colors.primary} />
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('AddFood')}>
+                        <GlassCard style={styles.menuItem}>
+                            <View style={[styles.menuIconBox, { backgroundColor: 'rgba(19, 127, 236, 0.1)' }]}>
+                                <TrendingUp color={Colors.primary} size={24} />
+                            </View>
+                            <View style={{ flex: 1 }}>
+                                <Text style={styles.menuTitle}>Haftalık Sağlık Trendleri</Text>
+                                <Text style={styles.menuSub}>Son 7 günün detaylı analizi</Text>
+                            </View>
+                            <ChevronRight color={Colors.glass.textSecondary} size={20} />
+                        </GlassCard>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('FAQ')}>
-                        <MenuItem icon={<FileText color={Colors.accent.green} size={20} />} title="S.S.S. (FAQ)" subtitle="Sıkça Sorulan Sorular" color={Colors.accent.green} />
+
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('FAQ')}>
+                        <GlassCard style={styles.menuItem}>
+                            <View style={[styles.menuIconBox, { backgroundColor: 'rgba(16, 185, 129, 0.1)' }]}>
+                                <FileText color={Colors.accent.green} size={24} />
+                            </View>
+                            <View style={{ flex: 1 }}>
+                                <Text style={styles.menuTitle}>Resmi Laboratuvar Raporları</Text>
+                                <Text style={styles.menuSub}>3 rapor bulundu (PDF mevcut)</Text>
+                            </View>
+                            <ChevronRight color={Colors.glass.textSecondary} size={20} />
+                        </GlassCard>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
-                        <MenuItem icon={<Activity color={Colors.accent.orange} size={20} />} title="Destek İletişim" subtitle="Yardım ve bilgi al" color={Colors.accent.orange} />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('About')}>
-                        <MenuItem icon={<FileText color={Colors.primary} size={20} />} title="PrediaBet Hakkında" subtitle="Versiyon 2.4.1" color={Colors.primary} />
+
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('Contact')}>
+                        <GlassCard style={styles.menuItem}>
+                            <View style={[styles.menuIconBox, { backgroundColor: 'rgba(249, 115, 22, 0.1)' }]}>
+                                <Activity color={Colors.accent.orange} size={24} />
+                            </View>
+                            <View style={{ flex: 1 }}>
+                                <Text style={styles.menuTitle}>Diyetisyen Danışma Geçmişi</Text>
+                                <Text style={styles.menuSub}>Sonraki kontrol: 24 Ekim</Text>
+                            </View>
+                            <ChevronRight color={Colors.glass.textSecondary} size={20} />
+                        </GlassCard>
                     </TouchableOpacity>
                 </View>
 
@@ -254,8 +286,20 @@ const styles = StyleSheet.create({
         gap: 12,
     },
     statCard: {
-        width: '48%',
+        width: '47%',
         padding: 16,
+        height: 110,
+        justifyContent: 'space-between',
+    },
+    statCardBtn: {
+        width: '47%',
+        height: 110,
+    },
+    statCardInner: {
+        width: '100%',
+        height: '100%',
+        padding: 16,
+        justifyContent: 'space-between',
     },
     statHeader: {
         flexDirection: 'row',

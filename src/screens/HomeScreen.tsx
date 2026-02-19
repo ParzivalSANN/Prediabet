@@ -76,14 +76,14 @@ export const HomeScreen = ({ navigation }: any) => {
                     <Text style={styles.sectionTitle}>Araçlar & Rehberler</Text>
                 </View>
                 <View style={styles.gridContainer}>
-                    <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.navigate('BMICalculator')}>
+                    <TouchableOpacity style={styles.btnWrapper} activeOpacity={0.8} onPress={() => navigation.navigate('BMICalculator')}>
                         <GlassCard style={styles.toolCard}>
                             <Scale color={Colors.accent.orange} size={24} />
                             <Text style={styles.toolTitle}>BKİ Hesapla</Text>
                         </GlassCard>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.navigate('FoodGuide')}>
+                    <TouchableOpacity style={styles.btnWrapper} activeOpacity={0.8} onPress={() => navigation.navigate('FoodGuide')}>
                         <GlassCard style={styles.toolCard}>
                             <Text style={{ fontSize: 20 }}>🍎</Text>
                             <Text style={styles.toolTitle}>Besin Rehberi</Text>
@@ -437,4 +437,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 12,
     },
+    btnWrapper: {
+        flex: 1,
+    }
 });

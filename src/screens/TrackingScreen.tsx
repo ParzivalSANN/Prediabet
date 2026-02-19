@@ -60,13 +60,14 @@ export const TrackingScreen = ({ navigation }: any) => {
 
                         {/* Bars */}
                         <View style={styles.barsRow}>
-                            <ChartBar day="Pzt" height="35%" />
-                            <ChartBar day="Sal" height="55%" />
-                            <ChartBar day="Çar" height="75%" />
-                            <ChartBar day="Per" height="95%" active />
-                            <ChartBar day="Cum" height="60%" />
-                            <ChartBar day="Cmt" height="40%" />
-                            <ChartBar day="Paz" height="85%" />
+                            {getChartData(selectedTab).map((item, index) => (
+                                <ChartBar
+                                    key={index}
+                                    label={item.label}
+                                    height={item.height}
+                                    active={item.active}
+                                />
+                            ))}
                         </View>
                     </View>
                 </GlassCard>
@@ -75,12 +76,12 @@ export const TrackingScreen = ({ navigation }: any) => {
                 <View style={styles.statsGrid}>
                     <GlassCard style={styles.statItem}>
                         <Text style={styles.statLabel}>Günlük Ort.</Text>
-                        <Text style={styles.statNum}>8,347</Text>
-                        <Text style={styles.statUnit}>ADIM / GÜN</Text>
+                        <Text style={styles.statNum}>{selectedTab === 'Gün' ? '6,420' : selectedTab === 'Hafta' ? '8,347' : '7,920'}</Text>
+                        <Text style={styles.statUnit}>ADIM / {selectedTab.toUpperCase()}</Text>
                     </GlassCard>
                     <GlassCard style={styles.statItem}>
                         <Text style={styles.statLabel}>Mesafe</Text>
-                        <Text style={styles.statNum}>42.5</Text>
+                        <Text style={styles.statNum}>{selectedTab === 'Gün' ? '4.2' : selectedTab === 'Hafta' ? '42.5' : '180.3'}</Text>
                         <Text style={styles.statUnit}>TOPLAM KM</Text>
                     </GlassCard>
                 </View>
@@ -89,7 +90,11 @@ export const TrackingScreen = ({ navigation }: any) => {
                 <View style={styles.insightCard}>
                     <Zap color={Colors.primary} size={24} style={{ marginBottom: 8 }} />
                     <Text style={styles.insightTitle}>Böyle devam et!</Text>
-                    <Text style={styles.insightText}>Bu hafta 5 kez günlük hedefine ulaştın. İstikrarı korumak anahtardır.</Text>
+                    <Text style={styles.insightText}>
+                        {selectedTab === 'Gün'
+                            ? 'Bugün hedefine %64 oranında ulaştın.'
+                            : 'Bu dönem istikrarlı bir ilerleme kaydettin.'}
+                    </Text>
                 </View>
 
                 {/* Recent Milestones */}
@@ -129,10 +134,50 @@ export const TrackingScreen = ({ navigation }: any) => {
     );
 };
 
-const ChartBar = ({ day, height, active }: any) => (
+// Mock data generator
+const getChartData = (tab: string) => {
+    switch (tab) {
+        case 'Gün':
+            return [
+                { label: '06:00', height: '20%' },
+                { label: '09:00', height: '40%' },
+                { label: '12:00', height: '80%', active: true },
+                { label: '15:00', height: '60%' },
+                { label: '18:00', height: '45%' },
+                { label: '21:00', height: '30%' },
+            ];
+        case 'Ay':
+            return [
+                { label: 'H1', height: '50%' },
+                { label: 'H2', height: '70%' },
+                { label: 'H3', height: '45%' },
+                { label: 'H4', height: '90%', active: true },
+            ];
+        case 'Yıl':
+            return [
+                { label: 'Q1', height: '60%' },
+                { label: 'Q2', height: '75%' },
+                { label: 'Q3', height: '50%' },
+                { label: 'Q4', height: '85%', active: true },
+            ];
+        case 'Hafta':
+        default:
+            return [
+                { label: 'Pzt', height: '35%' },
+                { label: 'Sal', height: '55%' },
+                { label: 'Çar', height: '75%' },
+                { label: 'Per', height: '95%', active: true },
+                { label: 'Cum', height: '60%' },
+                { label: 'Cmt', height: '40%' },
+                { label: 'Paz', height: '85%' },
+            ];
+    }
+};
+
+const ChartBar = ({ label, height, active }: any) => (
     <View style={styles.barContainer}>
         <View style={[styles.barFill, { height, backgroundColor: active ? Colors.primary : 'rgba(255,255,255,0.1)' }]} />
-        <Text style={[styles.barLabel, active && { color: Colors.primary }]}>{day}</Text>
+        <Text style={[styles.barLabel, active && { color: Colors.primary }]}>{label}</Text>
     </View>
 );
 
