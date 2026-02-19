@@ -24,8 +24,8 @@ export const HomeScreen = ({ navigation }: any) => {
                             />
                         </View>
                         <View>
-                            <Text style={styles.headerLabel}>HEALTH PROFILE</Text>
-                            <Text style={styles.headerTitle}>Hi, Alex</Text>
+                            <Text style={styles.headerLabel}>SAĞLIK PROFİLİ</Text>
+                            <Text style={styles.headerTitle}>Merhaba, Alex</Text>
                         </View>
                     </View>
                     <TouchableOpacity style={styles.notifButton}>
@@ -40,9 +40,9 @@ export const HomeScreen = ({ navigation }: any) => {
                         <View style={styles.stepInfoAbsolute}>
                             <Footprints color={Colors.primary} size={32} style={{ marginBottom: 5 }} />
                             <Text style={styles.stepCount}>6,420</Text>
-                            <Text style={styles.stepLabel}>STEPS TODAY</Text>
+                            <Text style={styles.stepLabel}>BUGÜNÜN ADIMI</Text>
                             <View style={styles.goalBadge}>
-                                <Text style={styles.goalText}>GOAL: 10k</Text>
+                                <Text style={styles.goalText}>HEDEF: 10b</Text>
                             </View>
                         </View>
                     </View>
@@ -52,7 +52,7 @@ export const HomeScreen = ({ navigation }: any) => {
                 <GlassCard style={styles.riskCard} onPress={() => navigation.navigate('RiskTest')}>
                     <View style={styles.riskContent}>
                         <View>
-                            <Text style={styles.cardLabel}>PREDIABETES RISK</Text>
+                            <Text style={styles.cardLabel}>PREDİYABET RİSKİ</Text>
                             <View style={styles.riskRow}>
                                 <Text style={styles.riskValue}>24%</Text>
                                 <View style={styles.trendBadge}>
@@ -60,12 +60,12 @@ export const HomeScreen = ({ navigation }: any) => {
                                     <Text style={styles.trendText}>2%</Text>
                                 </View>
                             </View>
-                            <Text style={styles.lastCheck}>Last check: 2 days ago</Text>
+                            <Text style={styles.lastCheck}>Son kontrol: 2 gün önce</Text>
                         </View>
                         <View style={styles.riskGauge}>
                             {/* Simplified visual gauge representation */}
                             <View style={styles.gaugeCircle}>
-                                <Text style={styles.gaugeText}>LOW</Text>
+                                <Text style={styles.gaugeText}>DÜŞÜK</Text>
                             </View>
                         </View>
                     </View>
@@ -73,28 +73,28 @@ export const HomeScreen = ({ navigation }: any) => {
 
                 {/* Quick Tools */}
                 <View style={styles.sectionHeader}>
-                    <Text style={styles.sectionTitle}>Tools & Guides</Text>
+                    <Text style={styles.sectionTitle}>Araçlar & Rehberler</Text>
                 </View>
                 <View style={styles.gridContainer}>
                     <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.navigate('BMICalculator')}>
                         <GlassCard style={styles.toolCard}>
                             <Scale color={Colors.accent.orange} size={24} />
-                            <Text style={styles.toolTitle}>BMI Calc</Text>
+                            <Text style={styles.toolTitle}>BKİ Hesapla</Text>
                         </GlassCard>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.navigate('FoodGuide')}>
                         <GlassCard style={styles.toolCard}>
                             <Text style={{ fontSize: 20 }}>🍎</Text>
-                            <Text style={styles.toolTitle}>Food Guide</Text>
+                            <Text style={styles.toolTitle}>Besin Rehberi</Text>
                         </GlassCard>
                     </TouchableOpacity>
                 </View>
 
                 {/* Daily Tasks */}
                 <View style={[styles.sectionHeader, { marginTop: 24 }]}>
-                    <Text style={styles.sectionTitle}>Daily Tasks</Text>
-                    <Text style={styles.progressText}>2/4 Done</Text>
+                    <Text style={styles.sectionTitle}>Günlük Görevler</Text>
+                    <Text style={styles.progressText}>2/4 Tamamlandı</Text>
                 </View>
 
                 <View style={styles.taskList}>
@@ -103,8 +103,8 @@ export const HomeScreen = ({ navigation }: any) => {
                         <View style={styles.taskLeft}>
                             <View style={styles.taskIconBg}><Text>🥣</Text></View>
                             <View>
-                                <Text style={[styles.taskTitle, styles.strikeThrough]}>Log Breakfast</Text>
-                                <Text style={styles.taskSub}>420 kcal • 15g Fiber</Text>
+                                <Text style={[styles.taskTitle, styles.strikeThrough]}>Kahvaltıyı Kaydet</Text>
+                                <Text style={styles.taskSub}>420 kcal • 15g Lif</Text>
                             </View>
                         </View>
                         <View style={styles.checkCircle}>
@@ -117,8 +117,8 @@ export const HomeScreen = ({ navigation }: any) => {
                         <View style={styles.taskLeft}>
                             <View style={[styles.taskIconBg, { backgroundColor: 'rgba(19, 127, 236, 0.1)' }]}><Activity color={Colors.primary} size={20} /></View>
                             <View>
-                                <Text style={styles.taskTitle}>15-min Post-meal Walk</Text>
-                                <Text style={[styles.taskSub, { color: Colors.primary }]}>Earn +50 XP</Text>
+                                <Text style={styles.taskTitle}>Yemek Sonrası 15dk Yürüyüş</Text>
+                                <Text style={[styles.taskSub, { color: Colors.primary }]}>+50 XP Kazan</Text>
                             </View>
                         </View>
                         <View style={styles.emptyCircle} />
@@ -131,11 +131,11 @@ export const HomeScreen = ({ navigation }: any) => {
                         <View style={styles.metricHeader}>
                             <Moon color="#818cf8" size={24} />
                             <View style={styles.metricBadge}>
-                                <Text style={styles.metricBadgeText}>GOOD</Text>
+                                <Text style={styles.metricBadgeText}>İYİ</Text>
                             </View>
                         </View>
-                        <Text style={styles.metricValue}>7h 20m</Text>
-                        <Text style={styles.metricLabel}>SLEEP QUALITY</Text>
+                        <Text style={styles.metricValue}>7s 20dk</Text>
+                        <Text style={styles.metricLabel}>UYKU KALİTESİ</Text>
                     </GlassCard>
 
                     <GlassCard style={styles.metricCard}>
@@ -146,7 +146,7 @@ export const HomeScreen = ({ navigation }: any) => {
                             </View>
                         </View>
                         <Text style={styles.metricValue}>84.5 <Text style={styles.unitText}>kg</Text></Text>
-                        <Text style={styles.metricLabel}>BODY WEIGHT</Text>
+                        <Text style={styles.metricLabel}>VÜCUT AĞIRLIĞI</Text>
                     </GlassCard>
                 </View>
 

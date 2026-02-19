@@ -12,8 +12,8 @@ export const ProfileScreen = ({ navigation }: any) => {
 
                 {/* Header */}
                 <View style={styles.header}>
-                    <Text style={styles.headerTitle}>Profile</Text>
-                    <TouchableOpacity style={styles.iconBtn}>
+                    <Text style={styles.headerTitle}>Profil</Text>
+                    <TouchableOpacity style={styles.iconBtn} onPress={() => navigation.navigate('Settings')}>
                         <Settings color={Colors.glass.text} size={24} />
                     </TouchableOpacity>
                 </View>
@@ -32,20 +32,20 @@ export const ProfileScreen = ({ navigation }: any) => {
                     <Text style={styles.userName}>Alex Johnson</Text>
                     <View style={styles.userMeta}>
                         <View style={styles.stageBadge}>
-                            <Text style={styles.stageText}>PREDIABETES STAGE 1</Text>
+                            <Text style={styles.stageText}>PREDİYABET EVRE 1</Text>
                         </View>
-                        <Text style={styles.metaText}>• 32 years</Text>
+                        <Text style={styles.metaText}>• 32 yaşında</Text>
                     </View>
 
                     <TouchableOpacity style={styles.editBtn} onPress={() => navigation.navigate('EditProfile')}>
-                        <Text style={styles.editBtnText}>Edit Profile</Text>
+                        <Text style={styles.editBtnText}>Profili Düzenle</Text>
                     </TouchableOpacity>
                 </View>
 
                 {/* Health Snapshot */}
                 <View style={styles.sectionHeader}>
-                    <Text style={styles.sectionTitle}>Health Snapshot</Text>
-                    <Text style={styles.updateText}>Updated 2m ago</Text>
+                    <Text style={styles.sectionTitle}>Sağlık Özeti</Text>
+                    <Text style={styles.updateText}>2dk önce güncellendi</Text>
                 </View>
 
                 <View style={styles.grid}>
@@ -57,7 +57,7 @@ export const ProfileScreen = ({ navigation }: any) => {
                                 <Text style={styles.badgTextRed}>2%</Text>
                             </View>
                         </View>
-                        <Text style={styles.statLabel}>GLUCOSE</Text>
+                        <Text style={styles.statLabel}>GLİKOZ</Text>
                         <Text style={styles.statValue}>105 <Text style={styles.unit}>mg/dL</Text></Text>
                     </GlassCard>
 
@@ -70,8 +70,8 @@ export const ProfileScreen = ({ navigation }: any) => {
                                     <Text style={styles.badgTextGreen}>0.4%</Text>
                                 </View>
                             </View>
-                            <Text style={styles.statLabel}>BMI</Text>
-                            <Text style={styles.statValue}>24.2 <Text style={styles.unit}>index</Text></Text>
+                            <Text style={styles.statLabel}>BKİ</Text>
+                            <Text style={styles.statValue}>24.2 <Text style={styles.unit}>indeks</Text></Text>
                         </GlassCard>
                     </TouchableOpacity>
 
@@ -84,15 +84,15 @@ export const ProfileScreen = ({ navigation }: any) => {
                                     <Text style={styles.badgTextGreen}>15%</Text>
                                 </View>
                             </View>
-                            <Text style={styles.statLabel}>STEPS</Text>
-                            <Text style={styles.statValue}>8,432 <Text style={styles.unit}>today</Text></Text>
+                            <Text style={styles.statLabel}>ADIM</Text>
+                            <Text style={styles.statValue}>8,432 <Text style={styles.unit}>bugün</Text></Text>
                         </GlassCard>
                     </TouchableOpacity>
 
                     <GlassCard style={styles.statCard}>
                         <View style={styles.statHeader}>
                             <Activity color={Colors.accent.purple} size={20} />
-                            <Text style={styles.stableText}>Stable</Text>
+                            <Text style={styles.stableText}>Dengeli</Text>
                         </View>
                         <Text style={styles.statLabel}>HbA1c</Text>
                         <Text style={styles.statValue}>5.7 <Text style={styles.unit}>%</Text></Text>
@@ -100,26 +100,26 @@ export const ProfileScreen = ({ navigation }: any) => {
                 </View>
 
                 {/* Menu List */}
-                <Text style={[styles.sectionTitle, { marginTop: 24, marginBottom: 12 }]}>Medical Records</Text>
+                <Text style={[styles.sectionTitle, { marginTop: 24, marginBottom: 12 }]}>Tıbbi Kayıtlar</Text>
 
                 <View style={styles.menuList}>
                     <TouchableOpacity onPress={() => navigation.navigate('AddFood')}>
-                        <MenuItem icon={<TrendingUp color={Colors.primary} size={20} />} title="Add Food Log" subtitle="Log daily meals" color={Colors.primary} />
+                        <MenuItem icon={<TrendingUp color={Colors.primary} size={20} />} title="Besin Günlüğü Ekle" subtitle="Günlük öğünleri kaydet" color={Colors.primary} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('FAQ')}>
-                        <MenuItem icon={<FileText color={Colors.accent.green} size={20} />} title="S.S.S. (FAQ)" subtitle="Frequently Asked Questions" color={Colors.accent.green} />
+                        <MenuItem icon={<FileText color={Colors.accent.green} size={20} />} title="S.S.S. (FAQ)" subtitle="Sıkça Sorulan Sorular" color={Colors.accent.green} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
-                        <MenuItem icon={<Activity color={Colors.accent.orange} size={20} />} title="Contact Support" subtitle="Get help & info" color={Colors.accent.orange} />
+                        <MenuItem icon={<Activity color={Colors.accent.orange} size={20} />} title="Destek İletişim" subtitle="Yardım ve bilgi al" color={Colors.accent.orange} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('About')}>
-                        <MenuItem icon={<FileText color={Colors.primary} size={20} />} title="About PrediaBet" subtitle="Version 2.4.1" color={Colors.primary} />
+                        <MenuItem icon={<FileText color={Colors.primary} size={20} />} title="PrediaBet Hakkında" subtitle="Versiyon 2.4.1" color={Colors.primary} />
                     </TouchableOpacity>
                 </View>
 
                 <TouchableOpacity style={styles.signOutBtn}>
                     <LogOut color={Colors.accent.red} size={20} style={{ marginRight: 8 }} />
-                    <Text style={styles.signOutText}>Sign Out</Text>
+                    <Text style={styles.signOutText}>Çıkış Yap</Text>
                 </TouchableOpacity>
 
                 <Text style={styles.versionText}>PrediaBet v2.4.1 (Variant 9)</Text>

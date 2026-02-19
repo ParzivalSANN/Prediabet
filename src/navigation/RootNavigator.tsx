@@ -22,6 +22,7 @@ import { AddFoodScreen } from '../screens/AddFoodScreen';
 import { FAQScreen } from '../screens/FAQScreen';
 import { ContactScreen } from '../screens/ContactScreen';
 import { LoginScreen } from '../screens/LoginScreen';
+import { SettingsScreen } from '../screens/SettingsScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -101,11 +102,12 @@ export const RootNavigator = () => {
                 <Stack.Screen name="FoodGuide" component={FoodGuideScreen} />
                 <Stack.Screen name="FoodDetails" component={FoodDetailsScreen} />
                 <Stack.Screen name="Tracking" component={TrackingScreen} />
-                <Stack.Screen name="About" component={AboutScreen} />
                 <Stack.Screen name="EditProfile" component={EditProfileScreen} />
                 <Stack.Screen name="AddFood" component={AddFoodScreen} />
                 <Stack.Screen name="FAQ" component={FAQScreen} />
                 <Stack.Screen name="Contact" component={ContactScreen} />
+                <Stack.Screen name="Settings" component={SettingsScreen} />
+                <Stack.Screen name="About" component={AboutScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

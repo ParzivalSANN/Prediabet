@@ -15,7 +15,7 @@ export const TrackingScreen = ({ navigation }: any) => {
                     <TouchableOpacity onPress={() => navigation.goBack()} style={styles.iconBtn}>
                         <ChevronLeft color={Colors.glass.text} size={24} />
                     </TouchableOpacity>
-                    <Text style={styles.headerTitle}>Step History</Text>
+                    <Text style={styles.headerTitle}>Adım Geçmişi</Text>
                     <TouchableOpacity style={styles.iconBtn}>
                         <Share color={Colors.glass.text} size={20} />
                     </TouchableOpacity>
@@ -23,24 +23,24 @@ export const TrackingScreen = ({ navigation }: any) => {
 
                 {/* Time Selector */}
                 <View style={styles.selector}>
-                    <Text style={styles.selText}>Day</Text>
+                    <Text style={styles.selText}>Gün</Text>
                     <View style={styles.selActive}>
-                        <Text style={styles.selTextActive}>Week</Text>
+                        <Text style={styles.selTextActive}>Hafta</Text>
                     </View>
-                    <Text style={styles.selText}>Month</Text>
-                    <Text style={styles.selText}>Year</Text>
+                    <Text style={styles.selText}>Ay</Text>
+                    <Text style={styles.selText}>Yıl</Text>
                 </View>
 
                 {/* Hero Chart Card */}
                 <GlassCard style={styles.chartCard}>
                     <View style={styles.chartHeader}>
                         <View>
-                            <Text style={styles.chartLabel}>Total Steps</Text>
+                            <Text style={styles.chartLabel}>Toplam Adım</Text>
                             <Text style={styles.chartValue}>58,432</Text>
-                            <Text style={styles.chartSub}><Text style={{ color: Colors.accent.green }}>+12%</Text> vs last week</Text>
+                            <Text style={styles.chartSub}><Text style={{ color: Colors.accent.green }}>+12%</Text> geçen haftaya göre</Text>
                         </View>
                         <View style={styles.dateBadge}>
-                            <Text style={styles.dateText}>Oct 14 - 20</Text>
+                            <Text style={styles.dateText}>Eki 14 - 20</Text>
                         </View>
                     </View>
 
@@ -53,13 +53,13 @@ export const TrackingScreen = ({ navigation }: any) => {
 
                         {/* Bars */}
                         <View style={styles.barsRow}>
-                            <ChartBar day="Mon" height="35%" />
-                            <ChartBar day="Tue" height="55%" />
-                            <ChartBar day="Wed" height="75%" />
-                            <ChartBar day="Thu" height="95%" active />
-                            <ChartBar day="Fri" height="60%" />
-                            <ChartBar day="Sat" height="40%" />
-                            <ChartBar day="Sun" height="85%" />
+                            <ChartBar day="Pzt" height="35%" />
+                            <ChartBar day="Sal" height="55%" />
+                            <ChartBar day="Çar" height="75%" />
+                            <ChartBar day="Per" height="95%" active />
+                            <ChartBar day="Cum" height="60%" />
+                            <ChartBar day="Cmt" height="40%" />
+                            <ChartBar day="Paz" height="85%" />
                         </View>
                     </View>
                 </GlassCard>
@@ -67,29 +67,29 @@ export const TrackingScreen = ({ navigation }: any) => {
                 {/* Stats Grid */}
                 <View style={styles.statsGrid}>
                     <GlassCard style={styles.statItem}>
-                        <Text style={styles.statLabel}>Daily Avg</Text>
+                        <Text style={styles.statLabel}>Günlük Ort.</Text>
                         <Text style={styles.statNum}>8,347</Text>
-                        <Text style={styles.statUnit}>STEPS / DAY</Text>
+                        <Text style={styles.statUnit}>ADIM / GÜN</Text>
                     </GlassCard>
                     <GlassCard style={styles.statItem}>
-                        <Text style={styles.statLabel}>Distance</Text>
+                        <Text style={styles.statLabel}>Mesafe</Text>
                         <Text style={styles.statNum}>42.5</Text>
-                        <Text style={styles.statUnit}>TOTAL KM</Text>
+                        <Text style={styles.statUnit}>TOPLAM KM</Text>
                     </GlassCard>
                 </View>
 
                 {/* Insight */}
                 <View style={styles.insightCard}>
                     <Zap color={Colors.primary} size={24} style={{ marginBottom: 8 }} />
-                    <Text style={styles.insightTitle}>Keep it up!</Text>
-                    <Text style={styles.insightText}>You hit your daily goal 5 times this week. Maintaining this consistency is key.</Text>
+                    <Text style={styles.insightTitle}>Böyle devam et!</Text>
+                    <Text style={styles.insightText}>Bu hafta 5 kez günlük hedefine ulaştın. İstikrarı korumak anahtardır.</Text>
                 </View>
 
                 {/* Recent Milestones */}
                 <View style={styles.milestones}>
                     <View style={styles.sectionHeader}>
-                        <Text style={styles.sectionTitle}>Recent Milestones</Text>
-                        <Text style={styles.viewAll}>View All</Text>
+                        <Text style={styles.sectionTitle}>Son Başarılar</Text>
+                        <Text style={styles.viewAll}>Tümünü Gör</Text>
                     </View>
 
                     <GlassCard style={styles.milestoneItem}>
@@ -98,8 +98,8 @@ export const TrackingScreen = ({ navigation }: any) => {
                                 <Award color={Colors.accent.yellow} size={20} />
                             </View>
                             <View>
-                                <Text style={styles.msTitle}>Goal Achieved</Text>
-                                <Text style={styles.msSub}>Oct 19 • 12,403 steps</Text>
+                                <Text style={styles.msTitle}>Hedefe Ulaşıldı</Text>
+                                <Text style={styles.msSub}>19 Eki • 12,403 adım</Text>
                             </View>
                         </View>
                     </GlassCard>
@@ -110,8 +110,8 @@ export const TrackingScreen = ({ navigation }: any) => {
                                 <TrendingUp color={Colors.primary} size={20} />
                             </View>
                             <View>
-                                <Text style={styles.msTitle}>New Record</Text>
-                                <Text style={styles.msSub}>Oct 17 • 15,221 steps</Text>
+                                <Text style={styles.msTitle}>Yeni Rekor</Text>
+                                <Text style={styles.msSub}>17 Eki • 15,221 adım</Text>
                             </View>
                         </View>
                     </GlassCard>

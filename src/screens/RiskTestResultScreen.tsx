@@ -27,7 +27,7 @@ export const RiskTestResultScreen = ({ navigation, route }: any) => {
                 <TouchableOpacity onPress={() => navigation.navigate('HomeTab')} style={styles.iconBtn}>
                     <ChevronLeft color="#fff" size={24} />
                 </TouchableOpacity>
-                <Text style={styles.headerTitle}>Risk Analysis</Text>
+                <Text style={styles.headerTitle}>Risk Analizi</Text>
                 <TouchableOpacity style={styles.iconBtn}>
                     <Share2 color="#fff" size={20} />
                 </TouchableOpacity>
@@ -62,19 +62,19 @@ export const RiskTestResultScreen = ({ navigation, route }: any) => {
                         </Svg>
                         <View style={styles.chartTextContainer}>
                             <Text style={styles.scoreText}>{riskScore}%</Text>
-                            <Text style={[styles.scoreLabel, { color: riskColor }]}>{riskLabel}</Text>
+                            <Text style={[styles.scoreLabel, { color: riskColor }]}>DÜŞÜK RİSK</Text>
                         </View>
                     </View>
                     <Text style={styles.chartDescription}>
-                        Your risk score is in the optimal range. Keep up your current lifestyle habits to maintain these results.
+                        Risk skorunuz optimal aralıkta. Mevcut yaşam tarzı alışkanlıklarınızı sürdürerek bu sonucu koruyun.
                     </Text>
                 </View>
 
                 {/* Detailed Breakdown */}
                 <View style={styles.sectionHeader}>
-                    <Text style={styles.sectionTitle}>Detailed Breakdown</Text>
+                    <Text style={styles.sectionTitle}>Detaylı Analiz</Text>
                     <View style={styles.badge}>
-                        <Text style={styles.badgeText}>UPDATED TODAY</Text>
+                        <Text style={styles.badgeText}>BUGÜN GÜNCELLENDİ</Text>
                     </View>
                 </View>
 
@@ -85,7 +85,7 @@ export const RiskTestResultScreen = ({ navigation, route }: any) => {
                             <Scale color={Colors.primary} size={24} />
                         </View>
                         <View style={styles.cardText}>
-                            <Text style={styles.cardTitle}>Weight Management</Text>
+                            <Text style={styles.cardTitle}>Kilo Yönetimi</Text>
                             <Text style={styles.cardSubtitle}>BMI: 22.4 (Optimal)</Text>
                         </View>
                         <CheckCircle color={Colors.accent.green} size={24} />
@@ -97,8 +97,8 @@ export const RiskTestResultScreen = ({ navigation, route }: any) => {
                             <Activity color="#f59e0b" size={24} />
                         </View>
                         <View style={styles.cardText}>
-                            <Text style={styles.cardTitle}>Blood Sugar Levels</Text>
-                            <Text style={styles.cardSubtitle}>Fasting: 92 mg/dL</Text>
+                            <Text style={styles.cardTitle}>Kan Şekeri Seviyeleri</Text>
+                            <Text style={styles.cardSubtitle}>Açlık: 92 mg/dL</Text>
                         </View>
                         <Info color="#f59e0b" size={24} />
                     </GlassCard>
@@ -109,8 +109,8 @@ export const RiskTestResultScreen = ({ navigation, route }: any) => {
                             <Activity color={Colors.primary} size={24} />
                         </View>
                         <View style={styles.cardText}>
-                            <Text style={styles.cardTitle}>Physical Activity</Text>
-                            <Text style={styles.cardSubtitle}>150+ mins active/week</Text>
+                            <Text style={styles.cardTitle}>Fiziksel Aktivite</Text>
+                            <Text style={styles.cardSubtitle}>150+ dk aktif/hafta</Text>
                         </View>
                         <CheckCircle color={Colors.accent.green} size={24} />
                     </GlassCard>
@@ -119,17 +119,20 @@ export const RiskTestResultScreen = ({ navigation, route }: any) => {
                 {/* Insights Banner */}
                 <GlassCard style={styles.insightBanner}>
                     <View style={styles.bannerContent}>
-                        <Text style={styles.bannerLabel}>WEEKLY RECOMMENDATION</Text>
-                        <Text style={styles.bannerTitle}>Focus on fiber-rich nutrition</Text>
+                        <Text style={styles.bannerLabel}>HAFTALIK ÖNERİ</Text>
+                        <Text style={styles.bannerTitle}>Lifli beslenmeye odaklanın</Text>
                         <Text style={styles.bannerText}>
-                            Add legumes and leafy greens to your dinner to stabilize glucose levels further.
+                            Akşam yemeklerine bakliyat ve yeşil yapraklı sebzeler ekleyerek glikoz seviyelerini dengeleyin.
                         </Text>
                     </View>
                 </GlassCard>
 
                 {/* Action Button */}
-                <TouchableOpacity style={styles.actionButton}>
-                    <Text style={styles.actionButtonText}>Generate My Action Plan</Text>
+                <TouchableOpacity
+                    style={styles.actionButton}
+                    onPress={() => navigation.navigate('Main')}
+                >
+                    <Text style={styles.actionButtonText}>Aksiyon Planımı Oluştur</Text>
                 </TouchableOpacity>
 
             </ScrollView>
