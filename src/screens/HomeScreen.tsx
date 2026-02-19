@@ -76,19 +76,23 @@ export const HomeScreen = ({ navigation }: any) => {
                     <Text style={styles.sectionTitle}>Araçlar & Rehberler</Text>
                 </View>
                 <View style={styles.gridContainer}>
-                    <TouchableOpacity style={styles.btnWrapper} activeOpacity={0.8} onPress={() => navigation.navigate('BMICalculator')}>
-                        <GlassCard style={styles.toolCard}>
-                            <Scale color={Colors.accent.orange} size={24} />
-                            <Text style={styles.toolTitle}>BKİ Hesapla</Text>
-                        </GlassCard>
-                    </TouchableOpacity>
+                    <GlassCard
+                        style={[styles.toolCard, { flex: 1 }]}
+                        onPress={() => navigation.navigate('BMICalculator')}
+                        active
+                    >
+                        <Scale color={Colors.accent.orange} size={24} />
+                        <Text style={styles.toolTitle}>BKİ Hesapla</Text>
+                    </GlassCard>
 
-                    <TouchableOpacity style={styles.btnWrapper} activeOpacity={0.8} onPress={() => navigation.navigate('FoodGuide')}>
-                        <GlassCard style={styles.toolCard}>
-                            <Text style={{ fontSize: 20 }}>🍎</Text>
-                            <Text style={styles.toolTitle}>Besin Rehberi</Text>
-                        </GlassCard>
-                    </TouchableOpacity>
+                    <GlassCard
+                        style={[styles.toolCard, { flex: 1 }]}
+                        onPress={() => navigation.navigate('FoodGuide')}
+                        active
+                    >
+                        <Text style={{ fontSize: 20 }}>🍎</Text>
+                        <Text style={styles.toolTitle}>Besin Rehberi</Text>
+                    </GlassCard>
                 </View>
 
                 {/* Daily Tasks */}
