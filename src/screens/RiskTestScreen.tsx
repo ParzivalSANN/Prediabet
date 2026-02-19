@@ -25,78 +25,78 @@ const QUESTIONS: Question[] = [
     {
         id: 'age',
         step: 1,
-        question: 'How old are you?',
+        question: 'Yaşınız kaç?',
         options: [
-            { id: '0', label: 'Under 45 years', points: 0 },
-            { id: '2', label: '45-54 years', points: 2 },
-            { id: '3', label: '55-64 years', points: 3 },
-            { id: '4', label: 'Over 64 years', points: 4 },
+            { id: '0', label: '45 yaş altı', points: 0 },
+            { id: '2', label: '45-54 yaş', points: 2 },
+            { id: '3', label: '55-64 yaş', points: 3 },
+            { id: '4', label: '64 yaş üzeri', points: 4 },
         ]
     },
     {
         id: 'bmi',
         step: 2,
-        question: 'What is your Body Mass Index (BMI)?',
+        question: 'Vücut Kitle İndeksiniz (BKİ) nedir?',
         options: [
-            { id: '0', label: 'Lower than 25 kg/m²', points: 0 },
-            { id: '1', label: '25-30 kg/m²', points: 1 },
-            { id: '3', label: 'Higher than 30 kg/m²', points: 3 },
+            { id: '0', label: '25 kg/m² den düşük', points: 0 },
+            { id: '1', label: '25-30 kg/m² arası', points: 1 },
+            { id: '3', label: '30 kg/m² den yüksek', points: 3 },
         ]
     },
     {
         id: 'waist',
         step: 3,
-        question: 'Waist circumference measured below the ribs?',
+        question: 'Kaburga altından ölçülen bel çevreniz?',
         options: [
-            { id: '0', label: 'Less than 94 cm (men) / 80 cm (women)', points: 0 },
-            { id: '3', label: '94-102 cm (men) / 80-88 cm (women)', points: 3 },
-            { id: '4', label: 'More than 102 cm (men) / 88 cm (women)', points: 4 },
+            { id: '0', label: '94 cm (erkek) / 80 cm (kadın) altı', points: 0 },
+            { id: '3', label: '94-102 cm (erkek) / 80-88 cm (kadın)', points: 3 },
+            { id: '4', label: '102 cm (erkek) / 88 cm (kadın) üstü', points: 4 },
         ]
     },
     {
         id: 'activity',
         step: 4,
-        question: 'Do you usually have at least 30 minutes of daily physical activity?',
+        question: 'Günde en az 30 dakika fiziksel aktivite yapıyor musunuz?',
         options: [
-            { id: '0', label: 'Yes', desc: 'At least 30 mins daily', icon: <Activity color={Colors.primary} size={24} /> },
-            { id: '2', label: 'No', desc: 'Less than 30 mins', icon: <Armchair color="gray" size={24} /> },
+            { id: '0', label: 'Evet', desc: 'Günde en az 30 dk', icon: <Activity color={Colors.primary} size={24} /> },
+            { id: '2', label: 'Hayır', desc: '30 dk dan az', icon: <Armchair color="gray" size={24} /> },
         ]
     },
     {
         id: 'veggies',
         step: 5,
-        question: 'How often do you eat vegetables, fruit, or berries?',
+        question: 'Ne sıklıkla sebze, meyve veya çilek tüketiyorsunuz?',
         options: [
-            { id: '0', label: 'Every day', icon: <Apple color={Colors.accent.green} size={24} /> },
-            { id: '1', label: 'Not every day', icon: <Apple color="gray" size={24} /> },
+            { id: '0', label: 'Her gün', icon: <Apple color={Colors.accent.green} size={24} /> },
+            { id: '1', label: 'Her gün değil', icon: <Apple color="gray" size={24} /> },
         ]
     },
     {
         id: 'meds',
         step: 6,
-        question: 'Have you ever taken medication for high blood pressure?',
+        question: 'Hiç yüksek tansiyon ilacı kullandınız mı?',
         options: [
-            { id: '0', label: 'No', icon: <Pill color="gray" size={24} /> },
-            { id: '2', label: 'Yes', icon: <Pill color={Colors.accent.red} size={24} /> },
+            { id: '0', label: 'Hayır', icon: <Pill color="gray" size={24} /> },
+            { id: '2', label: 'Evet', icon: <Pill color={Colors.accent.red} size={24} /> },
         ]
     },
     {
         id: 'glucose',
         step: 7,
-        question: 'Have you ever been found to have high blood glucose?',
+        question: 'Kan şekerinizin yüksek olduğu tespit edildi mi?',
         options: [
-            { id: '0', label: 'No', icon: <Gauge color="gray" size={24} /> },
-            { id: '5', label: 'Yes', icon: <Gauge color={Colors.accent.orange} size={24} /> },
+            { id: '0', label: 'Hayır', icon: <Gauge color="gray" size={24} /> },
+            { id: '5', label: 'Evet', icon: <Gauge color={Colors.accent.orange} size={24} /> },
         ]
     },
     {
         id: 'family',
         step: 8,
-        question: 'Have any of the members of your immediate family or other relatives been diagnosed with diabetes?',
+        question: 'Ailenizde diyabet teşhisi konmuş yakınınız var mı?',
         options: [
-            { id: '0', label: 'No', icon: <Dna color="gray" size={24} /> },
-            { id: '3', label: 'Yes: grandparent, aunt, uncle, or first cousin', points: 3 },
-            { id: '5', label: 'Yes: parent, brother, sister, or own child', points: 5 },
+            { id: '0', label: 'Hayır', icon: <Dna color="gray" size={24} /> },
+            { id: '3', label: 'Evet: büyükanne/baba, teyze, amca, kuzen', points: 3 },
+            { id: '5', label: 'Evet: anne, baba, kardeş veya kendi çocuğum', points: 5 },
         ]
     },
 ];
@@ -152,7 +152,7 @@ export const RiskTestScreen = ({ navigation }: any) => {
                     <TouchableOpacity onPress={handleBack} style={styles.iconBtn}>
                         <ChevronLeft color={Colors.glass.text} size={24} />
                     </TouchableOpacity>
-                    <Text style={styles.headerTitle}>RISK ASSESSMENT</Text>
+                    <Text style={styles.headerTitle}>RİSK DEĞERLENDİRMESİ</Text>
                     <TouchableOpacity onPress={() => navigation.navigate('HomeTab')} style={styles.iconBtn}>
                         <X color={Colors.glass.text} size={24} />
                     </TouchableOpacity>
@@ -161,8 +161,8 @@ export const RiskTestScreen = ({ navigation }: any) => {
                 {/* Progress Bar */}
                 <View style={styles.progressContainer}>
                     <View style={styles.progressLabels}>
-                        <Text style={styles.stepText}>Step {currentStepIndex + 1} <Text style={styles.totalText}>of {QUESTIONS.length}</Text></Text>
-                        <Text style={styles.percentText}>{Math.round(progress)}% Complete</Text>
+                        <Text style={styles.stepText}>Adım {currentStepIndex + 1} <Text style={styles.totalText}>/ {QUESTIONS.length}</Text></Text>
+                        <Text style={styles.percentText}>%{Math.round(progress)} Tamamlandı</Text>
                     </View>
                     <View style={styles.track}>
                         <View style={[styles.fill, { width: `${progress}%` }]} />
@@ -211,14 +211,14 @@ export const RiskTestScreen = ({ navigation }: any) => {
             {/* Footer */}
             <View style={styles.footer}>
                 <TouchableOpacity style={styles.prevBtn} onPress={handleBack}>
-                    <Text style={styles.prevText}>Previous</Text>
+                    <Text style={styles.prevText}>Geri</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={[styles.nextBtn, !selectedOptionId && styles.disabledBtn]}
                     onPress={handleNext}
                     disabled={!selectedOptionId}
                 >
-                    <Text style={styles.nextText}>Continue</Text>
+                    <Text style={styles.nextText}>Devam</Text>
                 </TouchableOpacity>
             </View>
 

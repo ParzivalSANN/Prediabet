@@ -10,13 +10,13 @@ const CATEGORIES = ['All Foods', 'Vegetables', 'Fruits', 'Grains', 'Proteins', '
 
 export const FoodGuideScreen = ({ navigation }: any) => {
     const [searchText, setSearchText] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('All Foods');
+    const [selectedCategory, setSelectedCategory] = useState('Tümü');
 
     const filteredData = useMemo(() => {
         return FOOD_DATA.filter(item => {
             const matchesSearch = item.name.toLowerCase().includes(searchText.toLowerCase()) ||
                 item.desc.toLowerCase().includes(searchText.toLowerCase());
-            const matchesCategory = selectedCategory === 'All Foods' || item.category === selectedCategory;
+            const matchesCategory = selectedCategory === 'Tümü' || item.category === selectedCategory;
             return matchesSearch && matchesCategory;
         });
     }, [searchText, selectedCategory]);
@@ -36,7 +36,7 @@ export const FoodGuideScreen = ({ navigation }: any) => {
                     <View style={styles.itemMeta}>
                         <Text style={styles.metaText}>{item.calories} kcal</Text>
                         <Text style={styles.metaDot}>•</Text>
-                        <Text style={styles.metaText}>{item.carbs} Carbs</Text>
+                        <Text style={styles.metaText}>{item.carbs} Karb</Text>
                     </View>
                 </View>
             </GlassCard>
@@ -48,7 +48,7 @@ export const FoodGuideScreen = ({ navigation }: any) => {
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
                     <ArrowLeft color={Colors.primary} size={24} />
-                    <Text style={styles.headerTitle}>Nutrition Guide</Text>
+                    <Text style={styles.headerTitle}>Besin Rehberi</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.iconBtn}>
                     <Heart color={Colors.primary} size={20} />
@@ -60,7 +60,7 @@ export const FoodGuideScreen = ({ navigation }: any) => {
                     <Search color={Colors.glass.textSecondary} size={20} />
                     <TextInput
                         style={styles.searchInput}
-                        placeholder="Search healthy foods..."
+                        placeholder="Sağlıklı besinlerde ara..."
                         placeholderTextColor={Colors.glass.textSecondary}
                         value={searchText}
                         onChangeText={setSearchText}
@@ -93,14 +93,14 @@ export const FoodGuideScreen = ({ navigation }: any) => {
                 ListHeaderComponent={
                     <View style={styles.listHeader}>
                         <Text style={styles.sectionTitle}>
-                            {searchText ? `Search Results (${filteredData.length})` : 'Recommended for You'}
+                            {searchText ? `Arama Sonuçları (${filteredData.length})` : 'Sizin İçin Önerilenler'}
                         </Text>
-                        {!searchText && <Text style={styles.seeAll}>See all</Text>}
+                        {!searchText && <Text style={styles.seeAll}>Tümünü Gör</Text>}
                     </View>
                 }
                 ListEmptyComponent={
                     <View style={{ alignItems: 'center', marginTop: 50 }}>
-                        <Text style={{ color: Colors.glass.textSecondary }}>No foods found.</Text>
+                        <Text style={{ color: Colors.glass.textSecondary }}>Besin bulunamadı.</Text>
                     </View>
                 }
             />

@@ -64,13 +64,13 @@ export const FoodDetailsScreen = ({ route, navigation }: any) => {
                             <View style={styles.statItem}>
                                 <Scale color={Colors.accent.teal} size={24} />
                                 <Text style={styles.statValue}>{item.carbs}</Text>
-                                <Text style={styles.statLabel}>Carbs</Text>
+                                <Text style={styles.statLabel}>Karb</Text>
                             </View>
                             <View style={styles.divider} />
                             <View style={styles.statItem}>
                                 <Activity color={Colors.primary} size={24} />
                                 <Text style={styles.statValue}>{item.gi}</Text>
-                                <Text style={styles.statLabel}>GI Index</Text>
+                                <Text style={styles.statLabel}>GI İndeksi</Text>
                             </View>
                         </View>
                     </GlassCard>
@@ -78,7 +78,7 @@ export const FoodDetailsScreen = ({ route, navigation }: any) => {
                     {item.details && (
                         <>
                             {/* Benefits */}
-                            <Text style={styles.sectionTitle}>Health Benefits</Text>
+                            <Text style={styles.sectionTitle}>Sağlık Faydaları</Text>
                             <View style={styles.benefitsList}>
                                 {item.details.benefits.map((benefit, index) => (
                                     <GlassCard key={index} style={styles.benefitCard}>
@@ -89,7 +89,7 @@ export const FoodDetailsScreen = ({ route, navigation }: any) => {
                             </View>
 
                             {/* Tips */}
-                            <Text style={styles.sectionTitle}>Dietitian's Tip</Text>
+                            <Text style={styles.sectionTitle}>Diyetisyen Tavsiyesi</Text>
                             <GlassCard style={styles.tipCard}>
                                 <Text style={styles.tipText}>"{item.details.tips}"</Text>
                             </GlassCard>

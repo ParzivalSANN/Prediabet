@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Switch, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, Switch, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import { ScreenBackground } from '../components/ScreenBackground';
 import { GlassCard } from '../components/GlassCard';
 import { Colors } from '../constants/Colors';
@@ -58,7 +58,7 @@ export const SettingsScreen = ({ navigation }: any) => {
                 <View style={{ width: 40 }} />
             </View>
 
-            <View style={styles.content}>
+            <ScrollView contentContainerStyle={styles.content}>
 
                 {/* Appearance Section */}
                 <Text style={styles.sectionTitle}>Görünüm</Text>
@@ -130,7 +130,7 @@ export const SettingsScreen = ({ navigation }: any) => {
                     </GlassCard>
                 </TouchableOpacity>
 
-            </View>
+            </ScrollView>
         </ScreenBackground>
     );
 };

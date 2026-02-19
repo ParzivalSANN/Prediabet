@@ -6,6 +6,8 @@ import { Colors } from '../constants/Colors';
 import { ChevronLeft, Share, Zap, Award, TrendingUp } from 'lucide-react-native';
 
 export const TrackingScreen = ({ navigation }: any) => {
+    const [selectedTab, setSelectedTab] = React.useState('Hafta');
+
     return (
         <ScreenBackground>
             <ScrollView contentContainerStyle={styles.content}>
@@ -23,12 +25,17 @@ export const TrackingScreen = ({ navigation }: any) => {
 
                 {/* Time Selector */}
                 <View style={styles.selector}>
-                    <Text style={styles.selText}>Gün</Text>
-                    <View style={styles.selActive}>
-                        <Text style={styles.selTextActive}>Hafta</Text>
-                    </View>
-                    <Text style={styles.selText}>Ay</Text>
-                    <Text style={styles.selText}>Yıl</Text>
+                    {['Gün', 'Hafta', 'Ay', 'Yıl'].map((tab) => (
+                        <TouchableOpacity
+                            key={tab}
+                            style={selectedTab === tab ? styles.selActive : { paddingVertical: 8 }}
+                            onPress={() => setSelectedTab(tab)}
+                        >
+                            <Text style={selectedTab === tab ? styles.selTextActive : styles.selText}>
+                                {tab}
+                            </Text>
+                        </TouchableOpacity>
+                    ))}
                 </View>
 
                 {/* Hero Chart Card */}
