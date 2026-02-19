@@ -9,7 +9,7 @@ export interface FoodItem {
     gi: number; // Glycemic Index
     desc: string;
     image: string;
-    badge: 'Low GI' | 'Complex Carb' | 'Antioxidant' | 'Healthy Fats' | 'High Protein' | 'Calcium Rich';
+    badge: 'Düşük GI' | 'Kompleks Karb' | 'Antioksidan' | 'Sağlıklı Yağlar' | 'Yüksek Protein' | 'Kalsiyum Zengini';
     badgeColor: string;
     details?: {
         benefits: string[];
